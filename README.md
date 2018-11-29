@@ -1,5 +1,5 @@
 ## 99 Bottles
-###### An exercise on TDD and refactoring based on Sandi Metz's book of the same name. 
+###### An exercise in TDD and refactoring based on Sandi Metz's book of the same name. 
 
 #### The Mission
 Create a simple program that returns all the verses in the song '99 Bottles.'
@@ -14,8 +14,8 @@ Ruby and Minitest
 #### How to run
 Clone this repo and open the directory:
 ```
-git clone 
-cd 
+git clone https://github.com/EsamAl-Dabagh/99-bottles.git
+cd 99-bottles
 ```
 
 Run the tests:
