@@ -8,9 +8,13 @@ class Bottles
     start.downto(finish).map { |i| verse(i) }.join("\n")
   end
 
+  def bottle_number_for(number)
+    BottleNumber.new(number)
+  end
+
   def verse(number)
-    bottle_number = BottleNumber.new(number)
-    next_bottle_number = BottleNumber.new(bottle_number.successor)
+    bottle_number = bottle_number_for(number)
+    next_bottle_number = bottle_number_for(bottle_number.successor)
 
     "#{bottle_number}".capitalize + " of beer on the wall, " + 
     "#{bottle_number} of beer.\n" +
@@ -70,5 +74,11 @@ class BottleNumber
     else
       number - 1
     end
+  end
+end
+
+class BottleNumber0 < BottleNumber
+  def quantity
+      "no more"
   end
 end
