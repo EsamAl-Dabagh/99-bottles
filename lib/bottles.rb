@@ -9,7 +9,11 @@ class Bottles
   end
 
   def bottle_number_for(number)
-    BottleNumber.new(number)
+    if number == 0
+      BottleNumber0
+    else
+      BottleNumber
+    end.new(number)
   end
 
   def verse(number)
@@ -53,19 +57,11 @@ class BottleNumber
   end
 
   def quantity
-    if number == 0
-      "no more"
-    else
       number.to_s
-    end
   end
 
   def action
-    if number == 0
-      "Go to the store and buy some more"
-    else
-      "Take #{pronoun} down and pass it around"
-    end
+    "Take #{pronoun} down and pass it around"
   end
   
   def successor
@@ -79,6 +75,10 @@ end
 
 class BottleNumber0 < BottleNumber
   def quantity
-      "no more"
+    "no more"
+  end
+
+  def action
+    "Go to the store and buy some more"
   end
 end
